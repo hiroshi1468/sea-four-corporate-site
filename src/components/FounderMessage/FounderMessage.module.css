@@ -1,0 +1,68 @@
+.founderMessage {
+  margin-top: 10vh;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.inner {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  gap: 8%;
+  align-items: flex-start;
+}
+
+.left {
+  flex: 0 0 40%;
+}
+
+.right {
+  flex: 1;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0077b6; /* オーシャンブルー */
+  position: relative;
+  padding-left: 16px;
+  border-left: 4px solid #0077b6;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  color: #333;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.text p {
+  margin-bottom: 24px;
+  line-height: 1.9;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+  }
+
+  .left {
+    flex: none;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+}

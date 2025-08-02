@@ -1,0 +1,46 @@
+.messageSection {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 16px;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.8;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 32px;
+  text-align: center;
+  color: #0077b6;
+}
+
+.content p {
+  margin-bottom: 1.6em;
+  font-size: 1rem;
+}
+
+.content strong {
+  color: #0077b6;
+}
+
+.signature {
+  font-weight: bold;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+/* モバイル対応 */
+@media screen and (max-width: 640px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .content p {
+    font-size: 0.95rem;
+  }
+
+  .signature {
+    font-size: 0.95rem;
+  }
+}

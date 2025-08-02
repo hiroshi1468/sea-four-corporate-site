@@ -1,0 +1,39 @@
+.category {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0077b6; /* オーシャンブルー */
+  margin-bottom: 70px;
+}
+
+.decorations {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.line {
+  width: 4px;
+  height: 40px;
+  background-color: #0077b6;
+  margin-right: 8px;
+}
+
+.diamondSolid,
+.diamondHollow {
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+  margin-right: 6px;
+}
+
+.diamondSolid {
+  background-color: #0077b6;
+  margin-top: -13px; /* ← 上にずらす */
+}
+
+.diamondHollow {
+  border: 2px solid #0077b6;
+  background-color: transparent;
+}
