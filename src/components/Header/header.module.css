@@ -88,18 +88,60 @@
   color: #333;
 }
 
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1500;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .mobileMenu {
-  display: none;
+  display: flex;
   flex-direction: column;
   background: white;
   border-top: 1px solid #ddd;
   padding: 16px;
+  min-width: 70%;
+  height: 100vh;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1600;
+  /* アニメーション用: transformとopacityを両方使う */
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.mobileMenu.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* モバイルメニューの項目間隔を広くする */
 .mobileItem {
-  padding: 8px 0;
+  padding: 18px 0;
   color: #333;
   text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+.mobileItem:last-child {
+  border-bottom: none;
+}
+
+.mobileItem:hover {
+  background: #f5f7fa;
 }
 
 /* モバイル対応 */
@@ -112,7 +154,5 @@
     display: block;
   }
 
-  .mobileMenu {
-    display: flex;
-  }
+  /* .mobileMenuは上記で定義済み */
 }
