@@ -12,6 +12,7 @@ export default function Header() {
   const [showBg, setShowBg] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   // ドロップダウン制御
   const handleMouseEnter = () => {
@@ -30,6 +31,25 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // メニュー外クリックで閉じる
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(e.target as Node)
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [mobileMenuOpen]);
+
+  // メニュー項目クリックで閉じる
+  const handleMenuItemClick = () => setMobileMenuOpen(false);
 
   return (
     <header className={`${styles.header} ${showBg ? styles.active : ""}`}>
@@ -94,24 +114,51 @@ export default function Header() {
         </div>
       </div>
 
-      {/* モバイル用メニュー展開 */}
+      {/* モバイル用メニュー展開（オーバーレイ＋右側スライド） */}
       {mobileMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <Link href="/" className={styles.mobileItem}>
-            トップ
-          </Link>
-          <Link href="/company/profile" className={styles.mobileItem}>
-            会社概要
-          </Link>
-          <Link href="/company/PrivacyPolicy" className={styles.mobileItem}>
-            プライバシーポリシー
-          </Link>
-          <Link href="/message" className={styles.mobileItem}>
-            代表者メッセージ
-          </Link>
-          <Link href="/contact" className={styles.mobileItem}>
-            お問い合わせ
-          </Link>
+        <div className={styles.mobileMenuOverlay}>
+          <nav
+            ref={mobileMenuRef}
+            className={`${styles.mobileMenu} ${
+              mobileMenuOpen ? styles.open : ""
+            }`}
+          >
+            <Link
+              href="/"
+              className={styles.mobileItem}
+              onClick={handleMenuItemClick}
+            >
+              トップ
+            </Link>
+            <Link
+              href="/company/profile"
+              className={styles.mobileItem}
+              onClick={handleMenuItemClick}
+            >
+              会社概要
+            </Link>
+            <Link
+              href="/company/PrivacyPolicy"
+              className={styles.mobileItem}
+              onClick={handleMenuItemClick}
+            >
+              プライバシーポリシー
+            </Link>
+            <Link
+              href="/message"
+              className={styles.mobileItem}
+              onClick={handleMenuItemClick}
+            >
+              代表者メッセージ
+            </Link>
+            <Link
+              href="/contact"
+              className={styles.mobileItem}
+              onClick={handleMenuItemClick}
+            >
+              お問い合わせ
+            </Link>
+          </nav>
         </div>
       )}
     </header>
