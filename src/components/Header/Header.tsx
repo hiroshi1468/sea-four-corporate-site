@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "@/components/Header/header.module.css";
-import { SEA_COMMON } from "@/consts/common/text";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -58,15 +57,12 @@ export default function Header() {
         <Link href="/" className={styles.navLink}>
           <div className={styles.logoArea}>
             <Image
-              src="/SEAlogo.png"
+              src="/SEA-name-in-logo.png"
               alt="会社ロゴ"
-              width={40}
-              height={40}
+              width={80}
+              height={80}
               className={styles.logo}
             />
-            <span className={styles.companyName}>
-              {SEA_COMMON.COMPANY_NAME}
-            </span>
           </div>
         </Link>
 
