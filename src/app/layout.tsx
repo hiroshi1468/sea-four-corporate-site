@@ -15,12 +15,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: " 株式会社SEA",
-  icons: {
-    icon: "/SEAlogo.png", // publicフォルダに配置したアイコン
-  },
+  title: "株式会社SEA",
   description:
     "株式会社SEAは、IT人材事業（SES・紹介・派遣）と飲食事業を展開。人と企業の「挑戦」を支え、成長とつながりを創出する多角的ソリューションカンパニーです。",
+  keywords: ["株式会社SEA", "IT人材", "飲食事業", "SES", "派遣", "紹介"],
+  openGraph: {
+    title: "株式会社SEA",
+    description:
+      "株式会社SEAは、IT人材事業（SES・紹介・派遣）と飲食事業を展開。人と企業の「挑戦」を支え、成長とつながりを創出する多角的ソリューションカンパニーです。",
+    url: "https://sea4-four.com/",
+    images: [
+      {
+        url: "/ogp-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "株式会社SEA",
+    description:
+      "株式会社SEAは、IT人材事業（SES・紹介・派遣）と飲食事業を展開。人と企業の「挑戦」を支え、成長とつながりを創出する多角的ソリューションカンパニーです。",
+    images: ["/ogp-image.png"],
+  },
 };
 
 export default function RootLayout({
