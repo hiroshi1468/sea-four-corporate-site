@@ -57,7 +57,7 @@ export default function Header() {
         <Link href="/" className={styles.navLink}>
           <div className={styles.logoArea}>
             <Image
-              src="/SEA-name-in-logo.png"
+              src="/sea-name-in-logo.png"
               alt="会社ロゴ"
               width={80}
               height={80}
