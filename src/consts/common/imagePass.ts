@@ -18,6 +18,6 @@ export const IMAGE_PASH = {
     MAIN: "/images/recruit/main.jpg",
   },
   COMMON: {
-    LOGO: "/images/common/logo.png",
+    LOGO: "/images/common/sea-name-in-logo.png",
   },
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "@/components/Header/header.module.css";
+import { IMAGE_PASH } from "@/consts/common/imagePass";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -57,7 +58,7 @@ export default function Header() {
         <Link href="/" className={styles.navLink}>
           <div className={styles.logoArea}>
             <Image
-              src="/sea-name-in-logo.png"
+              src={IMAGE_PASH.COMMON.LOGO}
               alt="会社ロゴ"
               width={80}
               height={80}
