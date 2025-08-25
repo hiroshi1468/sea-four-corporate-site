@@ -20,49 +20,180 @@
 }
 
 .left {
-  flex: 0 0 40%;
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .right {
-  flex: 1;
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  max-width: 340px;
+  min-width: 180px;
+  height: auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  margin-left: auto;
+}
+
+.founderImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(0, 119, 182, 0.18) 60%,
+    rgba(0, 0, 0, 0.22) 100%
+  );
+  mix-blend-mode: lighten;
 }
 
 .title {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #0077b6; /* オーシャンブルー */
-  position: relative;
+  color: #f0f4fa; /* 白に変更 */
+  margin-bottom: 12px;
+  border-left: 4px solid #fff; /* 白に変更 */
   padding-left: 16px;
-  border-left: 4px solid #0077b6;
 }
 
 .subtitle {
   font-size: 1.1rem;
-  margin-bottom: 32px;
-  color: #333;
+  margin-bottom: 28px;
+  color: #f0f4fa; /* 白系に変更 */
   font-style: italic;
   line-height: 1.6;
 }
 
 .text p {
-  margin-bottom: 24px;
-  line-height: 1.9;
+  margin-bottom: 18px;
+  line-height: 1.85;
   font-size: 1rem;
-  color: #333;
+  color: rgba(255, 255, 255, 0.96); /* 白に近い */
+  text-align: left;
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .inner {
     flex-direction: column;
+    gap: 32px;
   }
+}
 
-  .left {
-    flex: none;
-    margin-bottom: 16px;
+.founderMessageBg {
+  position: relative;
+  width: 100%;
+  min-height: 540px;
+  margin-top: 0; /* 上に余白を追加 */
+  background: linear-gradient(
+      to bottom,
+      rgba(224, 244, 255, 1) 0%,
+      rgba(224, 244, 255, 0.7) 12%,
+      rgba(224, 244, 255, 0) 22%
+    ),
+    url("/images/home/founder.jpg") center center / cover no-repeat;
+  background-color: #e0f4ff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 119, 182, 0.32); /* 濃い青に変更 */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.textBox {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  max-width: 640px;
+  margin-left: 6vw;
+  margin-right: auto;
+  padding: 72px 0; /* 上下の余白をさらに増やす */
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #005082; /* さらに濃い青に変更 */
+  margin-bottom: 12px;
+  border-left: 4px solid #005082;
+  padding-left: 16px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+  color: #003049; /* さらに濃い青に変更 */
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.en {
+  font-size: 0.98em;
+  color: #e0e8f0; /* 白系に変更 */
+  font-style: normal;
+}
+
+.text {
+  width: 100%;
+}
+
+.text p {
+  margin-bottom: 18px;
+  line-height: 1.85;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.96); /* 白に近い */
+  text-align: left;
+}
+
+.text strong {
+  color: #b3e0ff; /* 明るい青でアクセント */
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .founderMessageBg {
+    min-height: 420px;
+    justify-content: flex-start;
   }
-
-  .title {
-    font-size: 1.3rem;
+  .textBox {
+    width: 96vw;
+    max-width: 98vw;
+    margin: 0 2vw;
+    padding: 0;
   }
 }

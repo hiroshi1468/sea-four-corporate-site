@@ -39,6 +39,7 @@ export const metadata: Metadata = {
       "株式会社SEAは、IT人材事業（SES・紹介・派遣）と飲食事業を展開。人と企業の「挑戦」を支え、成長とつながりを創出する多角的ソリューションカンパニーです。",
     images: ["/ogp-image.png"],
   },
+  metadataBase: new URL("https://sea4-four.com/"),
 };
 
 export default function RootLayout({

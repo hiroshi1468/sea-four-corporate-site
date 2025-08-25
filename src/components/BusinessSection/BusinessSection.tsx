@@ -3,6 +3,7 @@
 import Image from "next/image";
 import SectionTitle from "../Accessory/Titte/SectionTitle";
 import styles from "./BusinessSection.module.css";
+import { IMAGE_PASH } from "@/consts/common/imagePass";
 
 type ServiceItem = {
   title: string;
@@ -58,18 +59,13 @@ export default function BusinessSection() {
         services={[
           {
             title: "Webサイト・Webアプリケーションの設計・開発",
-            image: "/sample.png",
+            image: IMAGE_PASH.HOME.BUSINESS.DEVELOPER,
             description: "最新技術を活用、高品質なシステムを提供",
           },
           {
             title: "UI/UX設計",
-            image: "/sample.png",
+            image: IMAGE_PASH.HOME.BUSINESS.UI_UX,
             description: "ユーザー体験を重視したデザイン設計を提供",
-          },
-          {
-            title: "技術ソリューション提供",
-            image: "/sample.png",
-            description: "目的に応じて最適な技術を選定し、導入支援",
           },
         ]}
       />
@@ -80,30 +76,33 @@ export default function BusinessSection() {
         services={[
           {
             title: "イベント企画・運営",
-            image: "/sample.png",
-            description: "交流会やセミナー、懇親会などを一貫して支援",
+            image: IMAGE_PASH.HOME.EVENT.EVENT,
+            description: "交流会やセミナー、懇親会などを一貫して支援します。",
           },
           {
             title: "コンテンツ設計・運営支援",
-            image: "/sample.png",
-            description: "イベントの目的に合った設計・実施をサポート",
+            image: IMAGE_PASH.HOME.EVENT.CONTENT,
+            description:
+              "イベントの目的に合った設計・実施をサポートいたします。",
           },
         ]}
       />
 
       <BusinessBlock
-        category="人材紹介業"
+        category="キャリア支援事業"
         description="転職仲介およびSES紹介を通じて、企業と人材を結びます。"
         services={[
           {
-            title: "正社員転職仲介",
+            title: "正社員転職支援",
             image: "/sample.png",
-            description: "求職者と企業を適切にマッチング",
+            description:
+              "求職者のキャリア形成を支援し、企業の採用活動をサポートします。",
           },
           {
-            title: "SES人材紹介",
+            title: "SES・業務委託型",
             image: "/sample.png",
-            description: "IT技術者をプロジェクトに応じて紹介",
+            description:
+              "業務委託契約を通じて、プロジェクトに適したエンジニアをアサインします。",
           },
         ]}
       />
