@@ -5,10 +5,7 @@ import { IMAGE_PASH } from "@/consts/common/imagePass";
 export default function ContactPage() {
   return (
     <main>
-      <Banner
-        title="代表者メッセージ"
-        backgroundImageUrl={IMAGE_PASH.HOME.HERO}
-      />
+      <Banner title="お問い合わせ" backgroundImageUrl={IMAGE_PASH.HOME.HERO} />
       <ContactForm />
     </main>
   );
